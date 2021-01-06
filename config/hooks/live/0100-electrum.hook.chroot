@@ -2,5 +2,27 @@
 
 set -e
 
-echo "install electrum 4.0.9"
+version="4.0.9"
+filename="electrum-${version}-x86_64.AppImage"
+
+echo "### install electrum 4.0.9"
+echo "downloading ..."
+wget https://download.electrum.org/${version}/${filename} -P /opt/
+wget https://download.electrum.org/${version}/${filename}.asc -P /opt/
+
+echo "verifying ..."
+thomasv_pubkey="0x6694D8DE7BE8EE5631BED9502BD5824B7F9470E6"
+gpg --list-keys $thomasv_pubkey || gpg --recv-keys $thomasv_pubkey || wget https://github.com/spesmilo/electrum/raw/3.3.4/pubkeys/ThomasV.asc -O - | gpg --import  
+gpg --verify /opt/$filename.asc /opt/$filename
+
+if [ $? -eq 0 ]
+then
+	echo "... OK"
+	chmod 755 /opt/$filename
+else 
+	echo "... FAILED !!!"
+	rm /opt/$filename
+fi
+
+rm /opt/$filename.asc
 
