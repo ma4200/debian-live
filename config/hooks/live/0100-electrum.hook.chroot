@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+echo "install electrum 4.0.9"
+
