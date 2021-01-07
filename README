@@ -1,0 +1,11 @@
+Debian Live CD with Electrum
+
+# https://www.bustawin.com/create-a-custom-live-debian-9-the-pro-way/
+# https://bitcoinelectrum.com/how-to-install-electrum-on-a-debian-or-ubuntu-live-cd/
+
+apt install live-build
+
+git clone https://github.com/ma4200/debian-live
+
+lb clean
+lb build
