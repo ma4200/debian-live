@@ -1,0 +1,78 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+	colors = true
+	
+	color_good = '#bfbfbf'  
+	color_degraded = '#888888'
+	color_bad = '#666666'
+	color_separator = '#666666'
+
+	#separator = "  "
+	
+	interval = 5
+}
+
+#order += "load"
+#order += "cpu_usage"
+#order += "cpu_temperature all"
+#order += "ipv6"
+order += "ethernet enx00b56d00aed8"
+order += "wireless wwp0s20u4i6"
+#order += "disk /"
+order += "battery all"
+order += "tztime local"
+
+
+cpu_usage {
+	format = "%usage"
+}
+
+cpu_temperature all {
+	format = "%degrees°"
+}
+
+wireless wlp4s0 {
+	format_up = "%ip (%essid)"
+	format_down = "down"
+}
+
+wireless wwp0s20u4i6 {
+	format_up = "%ip"
+	format_down = "down"
+}
+
+ethernet enx00b56d00aed8 {
+        # if you use %speed, i3status requires root privileges
+        format_up = "%ip"
+        format_down = "down"
+}
+
+battery all {
+	format = "%status %percentage"
+	status_chr = ""
+	status_bat = ""
+	status_unk = ""
+	status_full = ""
+	integer_battery_capacity = true
+	last_full_capacity = true
+	path = "/sys/class/power_supply/BAT%d/uevent"
+}
+
+tztime local {
+        format = "%A %d %h %Y  %H:%M  "
+}
+
+#load {
+#        format = " %1min %5min %15min"
+#}
+
+disk "/" {
+        format = "%percentage_used"
+}

@@ -1,0 +1,39 @@
+[global_config]
+  inactive_color_offset = 0.94
+  suppress_multiple_term_dialog = True
+  title_inactive_bg_color = "#383838"
+  title_inactive_fg_color = "#d3d7cf"
+  title_transmit_bg_color = "#888a85"
+[keybindings]
+  zoom_in = <Primary>equal
+[layouts]
+  [[default]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 8333aff7-1b43-4987-98c4-cf8279594e8d
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 0:0
+      size = 1276, 1404
+      title = matthieu@leno4:~/vhosts/deb9/weebox-manager-v5
+      type = Window
+    [[[terminal1]]]
+      order = 0
+      parent = child0
+      profile = default
+      type = Terminal
+      uuid = 8333aff7-1b43-4987-98c4-cf8279594e8d
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#383838"
+    cursor_color = "#bfbfbf"
+    font = Source Code Pro Medium 11
+    foreground_color = "#bfbfbf"
+    palette = "#555753:#ef2929:#73d216:#edd400:#729fcf:#ad7fa8:#06989a:#eeeeec:#888a85:#cc0000:#73d216:#edd400:#3465a4:#75507b:#34e2e2:#d3d7cf"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
