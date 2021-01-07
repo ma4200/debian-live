@@ -9,3 +9,6 @@ git clone https://github.com/ma4200/debian-live
 
 lb clean
 lb build
+
+cp live-image-amd64.hybrid.iso /dev/sdb
+sync

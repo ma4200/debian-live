@@ -5,13 +5,13 @@ set -e
 echo "### install Adobe Source Code Pro Font"
 
 echo "downloading ..."
-wget https://github.com/adobe-fonts/source-code-pro/releases/download/2.032R-ro%2F1.052R-it%2F1.012R-VAR/TTF-source-code-pro-2.032R-ro-1.052R-it.zip -P /tmp/
+wget https://github.com/adobe-fonts/source-code-pro/archive/2.032R-ro/1.052R-it/1.012R-VAR.tar.gz -P /tmp/
 
-unzip /tmp/TTF-source-code-pro-2.032R-ro-1.052R-it.zip -d /tmp/
-cp /tmp/TTF/SourceCodePro-* /usr/local/share/fonts/
+tar -xzf /tmp/1.012R-VAR.tar.gz -C /tmp
+cp /tmp/source-code-pro-2.032R-ro-1.052R-it-1.012R-VAR/TTF/SourceCodePro-* /usr/local/share/fonts/
 
-rm /tmp/TTF-source-code-pro-2.032R-ro-1.052R-it.zip
-rm -r /tmp/TTF
+rm /tmp/1.012R-VAR.tar.gz
+rm -r /tmp/source-code-pro-2.032R-ro-1.052R-it-1.012R-VAR
 
 fc-cache
 
